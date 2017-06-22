@@ -8,7 +8,7 @@
         <p>Your funds: {{funds | currency}}</p>
 
         <b-card class="mb-2" variant="success">
-            <i class="fa fa-star"></i>
+            <span @click="print"><icon name="gear" spin></icon></span>
             <icon name="vue" spin scale="3"></icon>
             <icon name="webpack" spin scale="3"></icon>
         </b-card>
@@ -17,6 +17,11 @@
 </template>
 <script>
 export default {
+    methods: {
+        print() {
+            console.log(this)
+        }
+    },
     computed: {
         funds() {
             return this.$store.getters.funds
